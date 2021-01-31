@@ -1,1 +1,2 @@
 # CSE248HikingApp
+## Smaller
