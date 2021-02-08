@@ -1,6 +1,8 @@
 package model;
 
-public class User implements Comparable<User>{
+import java.io.Serializable;
+
+public class User implements Comparable<User>, Serializable{
 	
 	private String firstName;
 	private String lastName;

@@ -1,8 +1,10 @@
 package model;
 
+import java.io.Serializable;
+import java.util.NavigableMap;
 import java.util.TreeMap;
 
-public class User_Storage {
+public class User_Storage implements Serializable{
 	
 	private TreeMap<String, User> userStorage = new TreeMap<String, User>();
 	
@@ -18,6 +20,7 @@ public class User_Storage {
 	public String getComparator(String key) {
 		return userStorage.comparator().toString();
 	}
+	
 	
 	
 	
