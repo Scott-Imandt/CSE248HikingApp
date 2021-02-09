@@ -77,6 +77,8 @@ public class Save_File implements Serializable{
 		
 		if(o == null && key.equals("A") ) {
 			User_Storage us = new User_Storage();
+			User u1 = new User();
+			us.putUserStorage(u1.getUserName(), u1);
 			return us;
 		}
 		return o;

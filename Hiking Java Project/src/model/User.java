@@ -8,7 +8,7 @@ public class User implements Comparable<User>, Serializable{
 	private String lastName;
 	private String userName;
 	private String password;
-	private int authType = 0;
+	private int authType = 1;
 	
 	
 	public User() {
@@ -16,6 +16,7 @@ public class User implements Comparable<User>, Serializable{
 		this.lastName = "Guest";
 		this.userName = "Guest";
 		this.password = "Guest";
+		this.authType = 0;
 	}
 	
 	
@@ -50,7 +51,7 @@ public class User implements Comparable<User>, Serializable{
 		this.userName = userName;
 	}
 	
-	private String getPassword() {
+	public String getPassword() {
 		return password;
 	}
 	
@@ -69,6 +70,7 @@ public class User implements Comparable<User>, Serializable{
 			
 	}
 	
+		
 	public int compareTo(User aKey) {
 		
 		int compareResult = this.userName.compareTo(aKey.userName);
@@ -92,6 +94,10 @@ public class User implements Comparable<User>, Serializable{
 	}
 	
 	public String toString() {
+		/*if(User.this == null) {
+			return "No user is signed in";
+		}*/
+		
 		return "Name:" + firstName + '\t' + "Last:" +lastName + '\t' + "User:" +userName + '\t' + "Pass:" +password + '\t' + "Auth:" +authType;
 	}
 
