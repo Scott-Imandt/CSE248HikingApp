@@ -1,20 +1,31 @@
 package model;
 
 import java.io.Serializable;
-import java.util.TreeMap;
+import java.util.*;
 
 public class User_Storage implements Serializable{
 	
 	private TreeMap<String, User> userStorage = new TreeMap<String, User>();
 	
+	
 		
 	public void putUserStorage(String key, User user) {
-		userStorage.put(key, user);
+		userStorage.put(key, user);	
 	}
 	
 	public User getUserStorage(String key) {
 		return userStorage.get(key);
 	}
+	
+	public void removeUser(User user, String key) {
+		if(user.getAuthType().toString().equals("ADMIN") && getComparator(key)) {
+			userStorage.remove(key);
+			System.out.println("User Was removed");
+		}
+		else System.out.println("Unable to remove User Check Authentication or User Key");
+		
+	}
+	
 	
 	public boolean getComparator(String key) {
 		return userStorage.containsKey(key);

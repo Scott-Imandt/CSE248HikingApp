@@ -15,53 +15,34 @@ public class AppDemo {
 		sf = Save_File.loadData();
 		us = (User_Storage) sf.getStoredData("A");
 			
-		
-		User u1 = new User("Scott", "Imandt", "Scooter", "12345"); 
-		User u2 = new User("Susan", "Imandt", "SuSu", "12345");
-		User u3 = new User("Susan", "Imandt", "SuSa", "12345");
-		
-		User u4 = us.signIn("Guest", "Guest");
-		
-		
-		
+		User u4 = us.createAccount("Scott", "Imandt", "Scooter", "12345");
+		u4 = us.createAccount("Alex", "Imandt", "Alex123", "12345");
+		u4 = us.createAccount("Susan", "Imandt", "SuSa", "12345");
+		u4 = us.createAccount("Billy", "Imandt", "Billy123", "12345");
+		u4 = us.signOut();	
+				
+		u4 = us.signIn("Admin", "Admin");
 		System.out.println(u4.toString());
-		
 		u4 = us.signOut();
 		
-		//u4 = us.signIn("Scooter", "12345");
+		u4 = us.signIn("SuSa", "12345");
+		System.out.println(u4.toString());
+		us.removeUser(u4, "SuSa");
+		System.out.println(u4.toString());
+		u4 = us.signOut();
 		
-		//System.out.println(us.getUserStorage("Scooter"));
-		
-		us.putUserStorage(u1.getUserName(), u1);
-		us.putUserStorage(u2.getUserName(), u2);
-		us.putUserStorage(u3.getUserName(), u3);
-		
-		//System.out.println(us.getUserStorage("SuSu"));
-		
-		//System.out.println(u4.toString());
-		
-		//u4 = us.signOut();
-		
-		//u4 = us.createAccount("Billy", "Imandt", "Bill123", "12345");
-		
-		u4 = us.signIn("Bill123", "12345");
+		u4 = us.signIn("Admin", "Admin");
+		us.removeUser(u4, "SuSa");
 		
 		System.out.println(u4.toString());
-		
+				
 		u4 = us.signOut();
 		
 		// Save instructions
 		sf.setStoredData("A", us);
 		sf.saveData(sf);
 				
-	
-		
-		//System.out.println(us.getUserStorage("Alex"));
-		
-		
-		
-		
-		
+			
 	}
 
 }

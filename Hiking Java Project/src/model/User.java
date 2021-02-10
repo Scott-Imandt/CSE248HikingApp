@@ -4,11 +4,16 @@ import java.io.Serializable;
 
 public class User implements Comparable<User>, Serializable{
 	
+	enum role{
+		GUEST, USER, ADMIN;
+	}
+	
 	private String firstName;
 	private String lastName;
 	private String userName;
 	private String password;
-	private int authType = 1;
+	private role authType;
+	
 	
 	
 	public User() {
@@ -16,7 +21,8 @@ public class User implements Comparable<User>, Serializable{
 		this.lastName = "Guest";
 		this.userName = "Guest";
 		this.password = "Guest";
-		this.authType = 0;
+		authType = role.GUEST;
+		
 	}
 	
 	
@@ -25,6 +31,17 @@ public class User implements Comparable<User>, Serializable{
 		this.lastName = lastName;
 		this.userName = userName;
 		this.password = password;
+		authType = role.USER;
+		
+	}
+	
+	public User(String firstName, String lastName, String userName, String password, String permission) {
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.userName = userName;
+		this.password = password;
+		authType = getRoleType(permission);
+		
 	}
 	
 	public String getFirstName() {
@@ -59,17 +76,29 @@ public class User implements Comparable<User>, Serializable{
 		this.password = password;
 	}
 	
-	public int getAuthType() {
+	public role getAuthType() {
 		return authType;
 	}
 	
-	private void setAuthType(int authType) {
-		if(authType == 0 || authType ==1) {
-			this.authType = authType;
+	private role getRoleType(String permission) {
+		if(permission.equals("ADMIN")) {
+			return role.ADMIN;
 		}
-			
+		if(permission.equals("GUEST")) {
+			return role.GUEST;
+		}
+		if(permission.equals("USER")) {
+			return role.USER;
+		}
+		return authType;
 	}
 	
+	public void setAuthType(String authType , User User) {
+		if(getAuthType() == role.ADMIN) {
+			User.authType = getRoleType(authType);
+		}
+							
+	}
 		
 	public int compareTo(User aKey) {
 		
