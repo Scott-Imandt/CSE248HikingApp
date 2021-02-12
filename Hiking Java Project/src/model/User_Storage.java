@@ -1,7 +1,8 @@
 package model;
 
 import java.io.Serializable;
-import java.util.*;
+import java.util.TreeMap;
+
 
 public class User_Storage implements Serializable{
 	
@@ -10,7 +11,7 @@ public class User_Storage implements Serializable{
 	
 		
 	public void putUserStorage(String key, User user) {
-		userStorage.put(key, user);	
+		userStorage.put(key, user);
 	}
 	
 	public User getUserStorage(String key) {
@@ -25,7 +26,6 @@ public class User_Storage implements Serializable{
 		else System.out.println("Unable to remove User Check Authentication or User Key");
 		
 	}
-	
 	
 	public boolean getComparator(String key) {
 		return userStorage.containsKey(key);

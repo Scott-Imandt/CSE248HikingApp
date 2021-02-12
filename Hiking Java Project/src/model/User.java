@@ -1,6 +1,7 @@
 package model;
 
 import java.io.Serializable;
+import java.util.LinkedList;
 
 public class User implements Comparable<User>, Serializable{
 	
@@ -14,6 +15,7 @@ public class User implements Comparable<User>, Serializable{
 	private String password;
 	private role authType;
 	
+	LinkedList<Trail_History> trailHistory = new LinkedList<Trail_History>();
 	
 	
 	public User() {
@@ -43,7 +45,15 @@ public class User implements Comparable<User>, Serializable{
 		authType = getRoleType(permission);
 		
 	}
-	
+		
+	public LinkedList<Trail_History> getTrailHistory() {
+		return trailHistory;
+	}
+
+	public void addTrailHistory(Trail_History trailHistory) {
+		this.trailHistory.addFirst(trailHistory);
+	}
+
 	public String getFirstName() {
 		return firstName;
 	}

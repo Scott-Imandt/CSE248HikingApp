@@ -12,8 +12,9 @@ import java.util.HashMap;
 public class Save_File implements Serializable{
 	
 	private static final String dataPath = "src/data/HikingSaveInfo.dat";
-	private HashMap<String, Object> storedData = new HashMap<String, Object>(2);
+	private HashMap<String, Object> storedData = new HashMap<String, Object>(3);
 	private final String  userDataKey = "A";
+	private final String  trailDataKey = "B";
 	
 	
 	
@@ -21,8 +22,9 @@ public class Save_File implements Serializable{
 		
 	}
 	
-	public Save_File(User_Storage userStorage) {
+	public Save_File(User_Storage userStorage, Trail_Storage trailStorage) {
 		storedData.put(userDataKey, userStorage);
+		storedData.put(trailDataKey, trailStorage);
 		
 	}
 	
@@ -83,6 +85,11 @@ public class Save_File implements Serializable{
 			us.putUserStorage(u2.getUserName(), u2);
 			return us;
 		}
+		if(o == null && key.equals("B") ) {
+			Trail_Storage ts = new Trail_Storage();						
+			return ts;
+		}
+		
 		return o;
 		
 	}
