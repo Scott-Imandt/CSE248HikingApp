@@ -1,12 +1,12 @@
 package model;
 
 import java.io.Serializable;
-import java.util.TreeMap;
+import java.util.Hashtable;
 
 
 public class User_Storage implements Serializable{
 	
-	private TreeMap<String, User> userStorage = new TreeMap<String, User>();
+	private Hashtable<String, User> userStorage = new Hashtable<String, User>(50000);
 	
 	
 		

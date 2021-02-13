@@ -112,8 +112,52 @@ public class Trail implements Comparable<Trail>, Serializable{
 				+ ", Elevation=" + elevation + ", TrailType=" + trailType + ", TrailDifficulty=" + trailDifficulty;
 	}
 
-	public boolean startsWith(String key) {
-		if(trailHead.contains(key)) {
+	public boolean startsWithName(String nameKey) {
+		if(trailName.contains(nameKey)) {
+			return true;
+		}
+		
+		return false;
+	}
+	public boolean startsWithHead(String headKey) {
+		if(trailHead.contains(headKey)) {
+			return true;
+		}
+		
+		return false;
+	}
+	public boolean startsWithLength(String lengthKey) {
+		if(lengthKey.equals("")) {
+			return true;
+		}
+				
+		if(trailLength == Integer.parseInt(lengthKey)) {
+			return true;
+		}
+		
+		return false;
+	}
+	public boolean startsWithElevation(String elevationKey) {
+		if(elevationKey.equals("")) {
+			return true;
+		}
+		
+		if(elevation == Integer.parseInt(elevationKey)) {
+			return true;
+		}
+		
+		return false;
+	}
+	public boolean startsWithDiff(String diffKey) {
+		
+		if(trailDifficulty == getTrailDifficulty(diffKey)) {
+			return true;
+		}
+		
+		return false;
+	}
+	public boolean startsWithType(String typeKey) {
+		if(trailType == getTrailType(typeKey)) {
 			return true;
 		}
 		

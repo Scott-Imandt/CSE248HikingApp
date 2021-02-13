@@ -10,14 +10,20 @@ public class Trail_Storage implements Serializable{
 	private TreeSet<Trail> trailStorage = new TreeSet<Trail>();
 
 	public void putTrailStorage( Trail trail) {
-		trailStorage.add(trail);	
+		if(getComparator(trail.getTrailHead())) {
+			
+			System.out.println("Cannot Create new trail because trail already exist");
+		}
+		
+		else trailStorage.add(trail);	
 
 	}
-	
-	public List searchTrailStorage(String key) {
 		
-		List<Trail> returnValue = trailStorage.stream().filter(x -> x.startsWith(key)).collect(Collectors.toList());
-		
+	public List searchTrailStorage(String nameKey, String headKey,  String lengthKey, String elevationKey, String typeKey, String diffKey) {
+			
+		 List<Trail> returnValue = trailStorage.stream().filter(x -> x.startsWithName(nameKey) && x.startsWithHead(lengthKey) && x.startsWithLength(lengthKey) && x.startsWithElevation(elevationKey)&&
+				 x.startsWithType(typeKey) && x.startsWithDiff(diffKey)).collect(Collectors.toList());
+		 
 		return returnValue;
 	}
 	
