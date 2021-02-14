@@ -48,32 +48,33 @@ public class Trail implements Comparable<Trail>, Serializable{
 		this.trailHead = trailHead;
 	}
 
-	public int getTrailLength() {
-		return trailLength;
+	public String getTrailLength() {
+		return String.valueOf(trailLength);
 	}
 
 	public void setTrailLength(int trailLength) {
 		this.trailLength = trailLength;
 	}
 
-	public int getElevation() {
-		return elevation;
+	public String getElevation() {
+		
+		return String.valueOf(elevation);
 	}
 
 	public void setElevation(int elevation) {
 		this.elevation = elevation;
 	}
 
-	public Type getTrailType() {
-		return trailType;
+	public String getTrailType() {
+		return trailType.toString();
 	}
 
 	public void setTrailType(String type) {
 		this.trailType = getTrailType(type);
 	}
 
-	public Difficulty getTrailDifficulty() {
-		return trailDifficulty;
+	public String getTrailDifficulty() {
+		return trailDifficulty.toString();
 	}
 
 	public void setTrailDifficulty(String diff) {
@@ -81,26 +82,26 @@ public class Trail implements Comparable<Trail>, Serializable{
 	}
 
 	private Type getTrailType(String type) {
-		if(type.equals("LOOP")) {
+		if(type.equalsIgnoreCase("LOOP")) {
 			return Type.LOOP;
 		}
-		if(type.equals("OUTANDBACK")) {
+		if(type.equalsIgnoreCase("OUTANDBACK")) {
 			return Type.OUTANDBACK;
 		}
-		if(type.equals("POINTTOPOINT")) {
+		if(type.equalsIgnoreCase("POINTTOPOINT")) {
 			return Type.POINTTOPOINT;
 		}
 		return trailType;
 	}
 	
 	private Difficulty getTrailDifficulty(String diff) {
-		if(diff.equals("EASY")) {
+		if(diff.equalsIgnoreCase("EASY")) {
 			return Difficulty.EASY;
 		}
-		if(diff.equals("MODERATE")) {
+		if(diff.equalsIgnoreCase("MODERATE")) {
 			return Difficulty.MODERATE;
 		}
-		if(diff.equals("HARD")) {
+		if(diff.equalsIgnoreCase("HARD")) {
 			return Difficulty.HARD;
 		}
 		return trailDifficulty;
@@ -112,22 +113,23 @@ public class Trail implements Comparable<Trail>, Serializable{
 				+ ", Elevation=" + elevation + ", TrailType=" + trailType + ", TrailDifficulty=" + trailDifficulty;
 	}
 
+
 	public boolean startsWithName(String nameKey) {
-		if(trailName.contains(nameKey)) {
+		if(this.getTrailName().toLowerCase().startsWith(nameKey.toLowerCase())) {
 			return true;
 		}
 		
 		return false;
 	}
 	public boolean startsWithHead(String headKey) {
-		if(trailHead.contains(headKey)) {
+		if(this.getTrailHead().toLowerCase().startsWith(headKey.toLowerCase())) {
 			return true;
 		}
 		
 		return false;
 	}
 	public boolean startsWithLength(String lengthKey) {
-		if(lengthKey.equals("")) {
+		if(lengthKey.equals("") || lengthKey.contentEquals("All Lengths")) {
 			return true;
 		}
 				
@@ -138,7 +140,7 @@ public class Trail implements Comparable<Trail>, Serializable{
 		return false;
 	}
 	public boolean startsWithElevation(String elevationKey) {
-		if(elevationKey.equals("")) {
+		if(elevationKey.equals("") || elevationKey.equals("All Elevations")) {
 			return true;
 		}
 		
@@ -150,19 +152,27 @@ public class Trail implements Comparable<Trail>, Serializable{
 	}
 	public boolean startsWithDiff(String diffKey) {
 		
-		if(trailDifficulty == getTrailDifficulty(diffKey)) {
+		if(trailDifficulty == getTrailDifficulty(diffKey)|| trailType.equals("All Difficulties")) {
 			return true;
 		}
 		
 		return false;
 	}
 	public boolean startsWithType(String typeKey) {
-		if(trailType == getTrailType(typeKey)) {
+		if(trailType == getTrailType(typeKey)|| trailType.equals("All Types")) {
 			return true;
 		}
 		
 		return false;
 	}
+	
+	//public boolean startsWithType(String typeKey) {
+	//	if( trailType.toString().equalsIgnoreCase(typeKey) || trailType.equals("All Types")) {
+	//		return true;
+	//	}
+	//	
+	//	return false;
+	//}
 	
 		
 	@Override

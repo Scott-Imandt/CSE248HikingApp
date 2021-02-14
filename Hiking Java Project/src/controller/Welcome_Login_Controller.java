@@ -28,7 +28,7 @@ public class Welcome_Login_Controller extends AppDemo{
 	@FXML Hyperlink createHyperlink;
 	
 	
-	@FXML public void onClickLogin() {
+	@FXML public void onClickLogin(ActionEvent event) throws IOException{
 		
 		String userName = userTextField.getText();
 		String password = PassTextField.getText();
@@ -43,6 +43,18 @@ public class Welcome_Login_Controller extends AppDemo{
 			System.out.println("You Did IT");
 			user = us.signIn(userName, password);
 			System.out.println(user.toString());
+			
+			Parent Trail_Search = FXMLLoader.load(getClass().getResource("../view/Trail_Search.fxml"));
+			Scene tableViewScene = new Scene(Trail_Search);
+			
+			Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
+			
+			window.setScene(tableViewScene);
+			window.show();
+		
+			
+			
+			
 		}
 	}
 

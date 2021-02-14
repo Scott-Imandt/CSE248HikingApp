@@ -30,7 +30,7 @@ public class Create_Login_Controller extends AppDemo{
 
 	
 	
-	@FXML public void onClickCreate() {
+	@FXML public void onClickCreate(ActionEvent event) throws IOException{
 		
 		String uName = userTextField.getText();
 		String pass = PassTextField.getText();
@@ -46,6 +46,16 @@ public class Create_Login_Controller extends AppDemo{
 			user = us.signIn(uName, pass);
 			System.out.println("User Created and loged in");
 			System.out.println(user.toString());
+			
+			Parent Trail_Search = FXMLLoader.load(getClass().getResource("../view/Trail_Search.fxml"));
+			Scene tableViewScene = new Scene(Trail_Search);
+			
+			Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
+			
+			window.setScene(tableViewScene);
+			window.show();
+			
+			
 		}
 		
 		

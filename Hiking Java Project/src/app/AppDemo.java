@@ -27,10 +27,12 @@ public class AppDemo {
 		
 		
 		
+		System.out.println(ts.searchTrailStorage("", "", "All Lengths", "", "",""));
+		
 		Application.launch(JavaFxApplication.class, args);
 		
-		
 		/*
+	
 		Trail t1 = new Trail("Adam","6 bs bld",3,45,"LOOP","EASY");
 		Trail t2 = new Trail("Betty","5 bs bld",4,55,"OUTANDBACK","MODERATE");
 		Trail t3 = new Trail("Carl","4 lane",4,65,"POINTTOPOINT","HARD");
@@ -44,7 +46,9 @@ public class AppDemo {
 		ts.putTrailStorage(t4);
 		ts.putTrailStorage(t5);
 		ts.putTrailStorage(t6);
-						
+		
+		
+		/*				
 		System.out.println(ts.searchTrailStorage("Adam", "", "", "", "",""));
 		//t1 = ts.getTrailStorage(ts.searchTrailStorage("",filter), 0);
 		//System.out.println(t1);

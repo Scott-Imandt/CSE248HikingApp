@@ -21,7 +21,7 @@ public class Trail_Storage implements Serializable{
 		
 	public List searchTrailStorage(String nameKey, String headKey,  String lengthKey, String elevationKey, String typeKey, String diffKey) {
 			
-		 List<Trail> returnValue = trailStorage.stream().filter(x -> x.startsWithName(nameKey) && x.startsWithHead(lengthKey) && x.startsWithLength(lengthKey) && x.startsWithElevation(elevationKey)&&
+		 List<Trail> returnValue = trailStorage.stream().filter(x -> x.startsWithName(nameKey) && x.startsWithHead(headKey) && x.startsWithLength(lengthKey) && x.startsWithElevation(elevationKey)&&
 				 x.startsWithType(typeKey) && x.startsWithDiff(diffKey)).collect(Collectors.toList());
 		 
 		return returnValue;
