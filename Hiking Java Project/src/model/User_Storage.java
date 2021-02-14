@@ -7,8 +7,6 @@ import java.util.Hashtable;
 public class User_Storage implements Serializable{
 	
 	private Hashtable<String, User> userStorage = new Hashtable<String, User>(50000);
-	
-	
 		
 	public void putUserStorage(String key, User user) {
 		userStorage.put(key, user);
@@ -32,7 +30,7 @@ public class User_Storage implements Serializable{
 	}
 	
 	public User signIn(String username, String password) {
-		User atempSignIn = new User(null, null, username, password);
+		User atempSignIn = new User(null, null, username, password, null);
 		User storedUser = getUserStorage(username);
 		
 		if(storedUser == null) {
@@ -62,13 +60,13 @@ public class User_Storage implements Serializable{
 	}
 	
 	
-	public User createAccount(String firstName, String lastName, String userName, String password) {
+	public User createAccount(String firstName, String lastName, String userName, String password,String phoneNumber) {
 		User temp = null;
 		if(getComparator(userName)) {
 			System.out.println("Username is already in use");
 			return temp;
 		}
-		temp = new User(firstName, lastName, userName, password);
+		temp = new User(firstName, lastName, userName, password,phoneNumber);
 		
 		putUserStorage(temp.getUserName(), temp);
 		System.out.println("User account created");

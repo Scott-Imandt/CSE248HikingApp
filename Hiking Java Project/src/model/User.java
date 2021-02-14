@@ -13,6 +13,7 @@ public class User implements Comparable<User>, Serializable{
 	private String lastName;
 	private String userName;
 	private String password;
+	private String phoneNumber;
 	private role authType;
 	
 	LinkedList<Trail_History> trailHistory = new LinkedList<Trail_History>();
@@ -28,16 +29,17 @@ public class User implements Comparable<User>, Serializable{
 	}
 	
 	
-	public User(String firstName, String lastName, String userName, String password) {
+	public User(String firstName, String lastName, String userName, String password, String phoneNumber) {
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.userName = userName;
 		this.password = password;
+		this.phoneNumber = phoneNumber;
 		authType = role.USER;
 		
 	}
 	
-	public User(String firstName, String lastName, String userName, String password, String permission) {
+	public User(String firstName, String lastName, String userName, String password, String permission, String phoneNumber) {
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.userName = userName;
@@ -49,6 +51,18 @@ public class User implements Comparable<User>, Serializable{
 	public LinkedList<Trail_History> getTrailHistory() {
 		return trailHistory;
 	}
+	
+	
+
+	public String getPhoneNumber() {
+		return phoneNumber;
+	}
+
+
+	public void setPhoneNumber(String phoneNumber) {
+		this.phoneNumber = phoneNumber;
+	}
+
 
 	public void addTrailHistory(Trail_History trailHistory) {
 		this.trailHistory.addFirst(trailHistory);

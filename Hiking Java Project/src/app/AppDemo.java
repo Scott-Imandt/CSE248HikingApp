@@ -1,5 +1,6 @@
 package app;
 
+import javafx.application.Application;
 import model.Save_File;
 import model.Trail;
 import model.Trail_History;
@@ -8,18 +9,28 @@ import model.User;
 import model.User_Storage;
 
 public class AppDemo {
-
+	
+	protected static User_Storage us = new User_Storage();
+	protected static Trail_Storage ts = new Trail_Storage();
+	protected static Save_File sf = new Save_File(us, ts);
+	protected static User user;
+	
+	
 	public static void main(String[] args) {
 		
 		
 		// Load instructions
-		User_Storage us = new User_Storage();
-		Trail_Storage ts = new Trail_Storage();
-		Save_File sf = new Save_File(us, ts);
+		
 		sf = Save_File.loadData();
 		us = (User_Storage) sf.getStoredData("A");
 		ts = (Trail_Storage) sf.getStoredData("B");
 		
+		
+		
+		Application.launch(JavaFxApplication.class, args);
+		
+		
+		/*
 		Trail t1 = new Trail("Adam","6 bs bld",3,45,"LOOP","EASY");
 		Trail t2 = new Trail("Betty","5 bs bld",4,55,"OUTANDBACK","MODERATE");
 		Trail t3 = new Trail("Carl","4 lane",4,65,"POINTTOPOINT","HARD");
@@ -68,8 +79,8 @@ public class AppDemo {
 		
 		
 			
-						
-		u4 = us.signOut();
+		*/				
+		//u4 = us.signOut();
 		
 		// Save instructions
 		sf.setStoredData("A", us);

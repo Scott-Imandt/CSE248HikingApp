@@ -37,8 +37,7 @@ public class Trail_Storage implements Serializable{
 			trailStorage.remove(trail);
 			System.out.println("Trail Was removed");
 		}
-		else System.out.println("Unable to remove Trail Check Authentication or Trail");
-		
+		else System.out.println("Unable to remove Trail Check Authentication or Trail");	
 	}
 	
 	public boolean getComparator(String key) {

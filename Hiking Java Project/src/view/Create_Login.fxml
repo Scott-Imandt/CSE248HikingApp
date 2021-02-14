@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1002.0" prefWidth="1466.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Create_Login_Controller">
+   <top>
+      <Label text="Welcome" translateY="100.0" BorderPane.alignment="TOP_CENTER">
+         <BorderPane.margin>
+            <Insets />
+         </BorderPane.margin>
+         <font>
+            <Font name="Bastion Regular" size="96.0" />
+         </font>
+      </Label>
+   </top>
+   <center>
+      <VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="600.0" spacing="10.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label alignment="TOP_CENTER" text="Create Account">
+               <font>
+                  <Font name="Bastion Regular" size="70.0" />
+               </font>
+            </Label>
+            <GridPane alignment="CENTER" hgap="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="471.0" prefWidth="386.0" vgap="10.0">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="138.0" minWidth="10.0" prefWidth="101.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="225.0" minWidth="10.0" prefWidth="225.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints maxHeight="39.0" minHeight="10.0" prefHeight="23.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="50.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="50.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="50.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="50.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="50.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="50.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <Label prefWidth="112.0" text="User Name:" GridPane.rowIndex="1">
+                     <font>
+                        <Font name="Bastion Regular" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label prefHeight="23.0" prefWidth="108.0" text="Password:" GridPane.rowIndex="2">
+                     <font>
+                        <Font name="Bastion Regular" size="18.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="userTextField" promptText="UserName" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </TextField>
+                  <PasswordField fx:id="PassTextField" prefHeight="37.0" prefWidth="225.0" promptText="Password" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </PasswordField>
+                  <Label fx:id="invalidLabel" alignment="TOP_CENTER" opacity="0.0" prefHeight="23.0" prefWidth="214.0" text="User Name Is Taken" textFill="RED" underline="true" GridPane.columnIndex="1">
+                     <font>
+                        <Font size="18.0" />
+                     </font></Label>
+                  <Label prefHeight="23.0" prefWidth="108.0" text="First Name:" GridPane.rowIndex="3">
+                     <font>
+                        <Font name="Bastion Regular" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label prefHeight="23.0" prefWidth="108.0" text="Last Name:" GridPane.rowIndex="4">
+                     <font>
+                        <Font name="Bastion Regular" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label prefHeight="23.0" prefWidth="143.0" text="Telephone:" GridPane.rowIndex="5">
+                     <font>
+                        <Font name="Bastion Regular" size="18.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="firstTextField" promptText="First Name" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </TextField>
+                  <TextField fx:id="lastTextField" promptText="Last Name" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </TextField>
+                  <TextField fx:id="teleTextField" promptText="Telephone" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </TextField>
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="15.0" GridPane.columnIndex="1" GridPane.rowIndex="6">
+                     <children>
+                        <Button fx:id="createButton" mnemonicParsing="false" onAction="#onClickCreate" prefHeight="32.0" prefWidth="80.0" text="Create">
+                           <font>
+                              <Font name="Bastion Regular" size="16.0" />
+                           </font>
+                        </Button>
+                        <Hyperlink fx:id="backHyperlink" onAction="#backLoginScreen" prefHeight="46.0" prefWidth="141.0" text="Have An Account" underline="true">
+                           <font>
+                              <Font name="Bastion Regular" size="15.0" />
+                           </font>
+                        </Hyperlink>
+                     </children>
+                  </HBox>
+               </children>
+               <padding>
+                  <Insets bottom="20.0" left="20.0" right="20.0" />
+               </padding>
+            </GridPane>
+         </children>
+      </VBox>
+   </center>
+</BorderPane>
