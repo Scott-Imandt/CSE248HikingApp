@@ -104,7 +104,7 @@ public class User implements Comparable<User>, Serializable{
 		return authType;
 	}
 	
-	private role getRoleType(String permission) {
+	public role getRoleType(String permission) {
 		if(permission.equals("ADMIN")) {
 			return role.ADMIN;
 		}

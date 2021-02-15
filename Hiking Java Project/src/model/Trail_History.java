@@ -10,41 +10,21 @@ public class Trail_History implements Serializable{
 	
 	private Trail trail;
 	private String trailName;
-	private Calendar dateStart = Calendar.getInstance();
-	private Calendar dateEnd = Calendar.getInstance();
 	private int distenceHiked;
 	private double duration;
 	private double averagepace;
+	private Calendar_Trail dateStart;
+	private Calendar_Trail dateEnd;
 
 	
-	public Trail_History(Trail trail, int iniYear, int iniMonth, int iniDate, int iniHour, int iniMin,  String iniAmPm,
-			int aftYear, int aftMonth, int aftDate, int aftHour, int aftMin, String aftAmPm, int distence) {
+	public Trail_History(Trail trail,Calendar_Trail dateStart,Calendar_Trail dateEnd, int distence) {
 		this.trail = trail;
 		this.trailName = trail.getTrailName();
-		
-		this.dateStart.set(iniYear, iniMonth, iniDate);
-		setAmPm(dateStart, iniAmPm);
-		setTime(dateStart, iniHour, iniMin);
-		this.dateEnd.set(aftYear, aftMonth, aftDate);
-		setAmPm(dateEnd, aftAmPm);
-		setTime(dateEnd, aftHour, aftMin);
+		this.dateStart = dateStart;
+		this.dateEnd = dateEnd;
 		this.distenceHiked = distence;
-		this.duration = calcDuration(dateStart,dateEnd);
+		this.duration = calcDuration(dateStart.getCalendar(),dateEnd.getCalendar());
 		this.averagepace = setPace((double)distenceHiked,duration);
-	}
-	public double setPace(double distence,double duration) {
-		DecimalFormat df = new DecimalFormat("#.##");
-		df.setRoundingMode(RoundingMode.CEILING);
-		
-		return Double.parseDouble(df.format(distence/duration));	
-	}
-			
-	public void setTime(Calendar cal, int hour, int min) {
-		if(hour == 12) {
-			hour = 0;
-		}
-		cal.set(Calendar.HOUR, hour);
-		cal.set(Calendar.MINUTE, min);
 	}
 	
 	public double calcDuration(Calendar iniCal,Calendar aftCal) {
@@ -57,21 +37,19 @@ public class Trail_History implements Serializable{
 		timeDiff = timeDiff/60000;	
 		
 		DecimalFormat df = new DecimalFormat("#.##");
-		df.setRoundingMode(RoundingMode.CEILING);
+		df.setRoundingMode(RoundingMode.DOWN);
 		timeDiff = timeDiff/60;		
 		timeDiff = Double.parseDouble(df.format(timeDiff));
 		return timeDiff;
 	}
+	
+	public double setPace(double distence,double duration) {
+		DecimalFormat df = new DecimalFormat("#.##");
+		df.setRoundingMode(RoundingMode.DOWN);
 		
-	public void setAmPm(Calendar cal, String AmPm) {
-		if(AmPm.equals("AM")) {
-			cal.set(Calendar.AM_PM,Calendar.AM);
-		}
-		
-		if(AmPm.equals("PM")) {
-			cal.set(Calendar.AM_PM,Calendar.PM);
-		}
+		return Double.parseDouble(df.format(distence/duration));	
 	}
+	
 	
 	public Trail getTrail() {
 		return trail;
@@ -92,27 +70,7 @@ public class Trail_History implements Serializable{
 		this.trailName = trailName;
 	}
 
-
-	public Calendar getDateStart() {
-		return dateStart;
-	}
-
-
-	public void setDateStart(Calendar dateStart) {
-		this.dateStart = dateStart;
-	}
-
-
-	public Calendar getDateEnd() {
-		return dateEnd;
-	}
-
-
-	public void setDateEnd(Calendar dateEnd) {
-		this.dateEnd = dateEnd;
-	}
-
-
+		
 	public int getDistenceHiked() {
 		return distenceHiked;
 	}
@@ -145,8 +103,8 @@ public class Trail_History implements Serializable{
 	
 	@Override
 	public String toString() {
-		return "Trail_History Trail= " + trail +", dateStart= " + dateStart.getTime() + ", dateEnd= "
-				+ dateEnd.getTime() + ", distenceHiked= " + distenceHiked+" Miles" + ", duration= " + duration+" Hours" + ", averagepace= "
+		return "Trail_History Trail= " + trail +", dateStart= " + dateStart.toString() + ", dateEnd= "
+				+ dateEnd.toString() + ", distenceHiked= " + distenceHiked+" Miles" + ", duration= " + duration+ " Hours" + ", averagepace= "
 				+ averagepace + " Miles/Hour";
 	}
 	

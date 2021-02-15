@@ -55,13 +55,7 @@ public class Create_Login_Controller extends AppDemo{
 			window.setScene(tableViewScene);
 			window.show();
 			
-			
 		}
-		
-		
-		
-		
-		
 		
 	}
 

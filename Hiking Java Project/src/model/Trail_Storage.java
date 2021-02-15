@@ -19,7 +19,7 @@ public class Trail_Storage implements Serializable{
 
 	}
 		
-	public List searchTrailStorage(String nameKey, String headKey,  String lengthKey, String elevationKey, String typeKey, String diffKey) {
+	public List<Trail> searchTrailStorage(String nameKey, String headKey,  String lengthKey, String elevationKey, String typeKey, String diffKey) {
 			
 		 List<Trail> returnValue = trailStorage.stream().filter(x -> x.startsWithName(nameKey) && x.startsWithHead(headKey) && x.startsWithLength(lengthKey) && x.startsWithElevation(elevationKey)&&
 				 x.startsWithType(typeKey) && x.startsWithDiff(diffKey)).collect(Collectors.toList());
@@ -41,7 +41,7 @@ public class Trail_Storage implements Serializable{
 	}
 	
 	public boolean getComparator(String key) {
-		Trail temp = new Trail("", key, 0, 0, "", "");
+		Trail temp = new Trail("", key, 0, 0, "", "", null);
 		return trailStorage.contains(temp);
 		
 		
