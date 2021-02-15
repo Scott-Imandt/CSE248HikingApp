@@ -56,7 +56,7 @@ public class AppDemo {
 		Trail t3 = new Trail("Carl","4 lane",4,65,"POINTTOPOINT","HARD",null);
 		Trail t4 = new Trail("David","3 bs bld",3,45,"LOOP","EASY",null);
 		Trail t5 = new Trail("Eurl","2 bs bld",4,55,"OUTANDBACK","MODERATE",null);
-		Trail t6 = new Trail("Frank","1 lane",4,65,"POINTTOPOINT","HARD","/data/Hiking_Images/Frank.jpg");
+		Trail t6 = new Trail("Frank","1 lane",4,65,"POINTTOPOINT","HARD",null);
 		
 		ts.putTrailStorage(t1);
 		ts.putTrailStorage(t2);
