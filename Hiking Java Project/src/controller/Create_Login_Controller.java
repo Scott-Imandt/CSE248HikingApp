@@ -37,8 +37,9 @@ public class Create_Login_Controller extends AppDemo{
 		String fName = firstTextField.getText();
 		String lName = lastTextField.getText();
 		String tele = teleTextField.getText();
+		String img = null;
 		
-		if(us.createAccount(fName, lName, uName, pass, tele) == null) {
+		if(us.createAccount(fName, lName, uName, pass, tele, img) == null) {
 			invalidLabel.setOpacity(1);
 			
 		}

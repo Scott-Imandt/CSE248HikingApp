@@ -51,9 +51,7 @@ public class Welcome_Login_Controller extends AppDemo{
 			
 			window.setScene(tableViewScene);
 			window.show();
-		
-			
-			
+	
 			
 		}
 	}

@@ -8,7 +8,12 @@ import java.util.stream.Collectors;
 public class Trail_Storage implements Serializable{
 	
 	private TreeSet<Trail> trailStorage = new TreeSet<Trail>();
-
+	
+	public TreeSet<Trail> getTreeSet() {
+		return trailStorage;
+	}
+	
+	
 	public void putTrailStorage( Trail trail) {
 		if(getComparator(trail.getTrailHead())) {
 			

@@ -14,6 +14,8 @@ public class User implements Comparable<User>, Serializable{
 	private String userName;
 	private String password;
 	private String phoneNumber;
+	private String imageLocation;
+	private String authTypeString;
 	private role authType;
 	
 	LinkedList<Trail_History> trailHistory = new LinkedList<Trail_History>();
@@ -25,28 +27,51 @@ public class User implements Comparable<User>, Serializable{
 		this.userName = "Guest";
 		this.password = "Guest";
 		authType = role.GUEST;
+		authTypeString = authType.toString();
 		
 	}
 	
 	
-	public User(String firstName, String lastName, String userName, String password, String phoneNumber) {
+	public User(String firstName, String lastName, String userName, String password, String phoneNumber, String imageLocation) {
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.userName = userName;
 		this.password = password;
 		this.phoneNumber = phoneNumber;
+		setImageLocation(imageLocation);
 		authType = role.USER;
+		authTypeString = authType.toString();
 		
 	}
 	
-	public User(String firstName, String lastName, String userName, String password, String permission, String phoneNumber) {
+	public User(String firstName, String lastName, String userName, String password, String permission, String phoneNumber, String imageLocation) {
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.userName = userName;
 		this.password = password;
 		authType = getRoleType(permission);
+		authTypeString = authType.toString();
 		
 	}
+	
+	
+	public String getAuthTypeString() {
+		return authTypeString;
+	}
+
+
+	public void setImageLocation(String imageLoaction) {
+		if(imageLoaction == null) {
+			this.imageLocation = "/data/System_Files/Icons/Guest.jpg";
+		}
+		else this.imageLocation = "/data/User_Images/" +imageLoaction;
+	}
+	
+	public String getImage() {
+		return imageLocation;
+	}
+
+		
 		
 	public LinkedList<Trail_History> getTrailHistory() {
 		return trailHistory;

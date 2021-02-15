@@ -51,12 +51,12 @@ public class AppDemo {
 		
 		
 	
-		Trail t1 = new Trail("Adam","6 bs bld",3,45,"LOOP","EASY",null);
-		Trail t2 = new Trail("Betty","5 bs bld",4,55,"OUTANDBACK","MODERATE",null);
+		Trail t1 = new Trail("Adam","6 bs bld",3,45,"LOOP","EASY","/data/Hiking_Images/Adam.jpg");
+		Trail t2 = new Trail("Betty","5 bs bld",4,55,"OUTANDBACK","MODERATE","/data/Hiking_Images/Betty.jpg");
 		Trail t3 = new Trail("Carl","4 lane",4,65,"POINTTOPOINT","HARD",null);
 		Trail t4 = new Trail("David","3 bs bld",3,45,"LOOP","EASY",null);
 		Trail t5 = new Trail("Eurl","2 bs bld",4,55,"OUTANDBACK","MODERATE",null);
-		Trail t6 = new Trail("Frank","1 lane",4,65,"POINTTOPOINT","HARD",null);
+		Trail t6 = new Trail("Frank","1 lane",4,65,"POINTTOPOINT","HARD","/data/Hiking_Images/Frank.jpg");
 		
 		ts.putTrailStorage(t1);
 		ts.putTrailStorage(t2);
@@ -75,28 +75,7 @@ public class AppDemo {
 		u4 = us.createAccount("Alex", "Imandt", "Alex123", "12345");
 		u4 = us.createAccount("Susan", "Imandt", "SuSa", "12345");
 		u4 = us.createAccount("Billy", "Imandt", "Billy123", "12345");
-		u4 = us.createAccount("Alex", "Imandt", "Alex1232", "12345");
-		u4 = us.createAccount("Susan", "Imandt", "SuSa2", "12345");
-		u4 = us.createAccount("Billy", "Imandt", "Billy1232", "12345");
-		u4 = us.createAccount("Alex", "Imandt", "Alex1233", "12345");
-		u4 = us.createAccount("Susan", "Imandt", "SuSa3", "12345");
-		u4 = us.createAccount("Billy", "Imandt", "Billy1233", "12345");
-		u4 = us.createAccount("Alex", "Imandt", "Alex12323", "12345");
-		u4 = us.createAccount("Susan", "Imandt", "SuSa23", "12345");
-		u4 = us.createAccount("Billy", "Imandt", "Billy12323", "12345");
-		
-		
-		
-		
-		u4 = us.signOut();	
-			
-		
-		
-		u4.addTrailHistory(th);
-		
-		System.out.println(u4.getTrailHistory());
-		System.out.println(u4.toString());
-		
+
 		
 			
 		*/				

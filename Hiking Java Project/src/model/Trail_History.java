@@ -15,9 +15,11 @@ public class Trail_History implements Serializable{
 	private double averagepace;
 	private Calendar_Trail dateStart;
 	private Calendar_Trail dateEnd;
+	private String uploadFile;
+	private String date;
 
 	
-	public Trail_History(Trail trail,Calendar_Trail dateStart,Calendar_Trail dateEnd, int distence) {
+	public Trail_History(Trail trail,Calendar_Trail dateStart,Calendar_Trail dateEnd, int distence, String uploadFile) {
 		this.trail = trail;
 		this.trailName = trail.getTrailName();
 		this.dateStart = dateStart;
@@ -25,6 +27,20 @@ public class Trail_History implements Serializable{
 		this.distenceHiked = distence;
 		this.duration = calcDuration(dateStart.getCalendar(),dateEnd.getCalendar());
 		this.averagepace = setPace((double)distenceHiked,duration);
+		setImageLocation(uploadFile);
+		setDate();
+				
+	}
+	
+	public void setImageLocation(String imageLocation) {
+		if(imageLocation == null) {
+			this.uploadFile = null;
+		}
+		else this.uploadFile = imageLocation;
+	}
+	
+	public String getImageLocation() {
+		return uploadFile;
 	}
 	
 	public double calcDuration(Calendar iniCal,Calendar aftCal) {
@@ -49,6 +65,18 @@ public class Trail_History implements Serializable{
 		
 		return Double.parseDouble(df.format(distence/duration));	
 	}
+	
+	public void setDate() {
+		
+		String result = dateEnd.getCalendar().get(Calendar.MONTH) + "/" + dateEnd.getCalendar().get(Calendar.DATE) + "/" + dateEnd.getCalendar().get(Calendar.YEAR);
+		
+		this.date = result;
+	}
+	
+	public String getDate() {
+		return date;
+	}
+	
 	
 	
 	public Trail getTrail() {
@@ -105,7 +133,7 @@ public class Trail_History implements Serializable{
 	public String toString() {
 		return "Trail_History Trail= " + trail +", dateStart= " + dateStart.toString() + ", dateEnd= "
 				+ dateEnd.toString() + ", distenceHiked= " + distenceHiked+" Miles" + ", duration= " + duration+ " Hours" + ", averagepace= "
-				+ averagepace + " Miles/Hour";
+				+ averagepace + " Miles/Hour" + "UploadFile= " + uploadFile;
 	}
 	
 	

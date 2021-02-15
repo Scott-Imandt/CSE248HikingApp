@@ -69,13 +69,13 @@
               <content>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                        <GridPane layoutX="176.0" layoutY="20.0" prefHeight="281.0" prefWidth="719.0">
+                        <GridPane layoutX="121.0" layoutY="40.0" prefHeight="280.0" prefWidth="807.0">
                           <columnConstraints>
-                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="155.33331298828125" minWidth="10.0" prefWidth="130.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="194.0" minWidth="10.0" prefWidth="194.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="183.0" minWidth="10.0" prefWidth="183.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="145.3333740234375" minWidth="10.0" prefWidth="90.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="184.0" minWidth="10.0" prefWidth="158.6666259765625" />
                           </columnConstraints>
                           <rowConstraints>
                             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
@@ -94,7 +94,6 @@
                                     <Font name="Bastion Regular" size="18.0" />
                                  </font></Label>
                               <DatePicker fx:id="endDatePicker" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                              <Button mnemonicParsing="false" text="Browse" GridPane.columnIndex="1" GridPane.rowIndex="3" />
                               <Button fx:id="submitButton" mnemonicParsing="false" onAction="#submitTrailHistory" text="Submit" GridPane.columnIndex="3" GridPane.rowIndex="3" />
                               <TextField fx:id="startTimeTextField" promptText="Time HR:MN" GridPane.columnIndex="2" />
                               <TextField fx:id="endTimeTextField" promptText="Time HR:MN" GridPane.columnIndex="2" GridPane.rowIndex="1" />
@@ -106,6 +105,16 @@
                                  </font>
                               </Label>
                               <TextField fx:id="dissTextBar" promptText="Distence in Miles" GridPane.columnIndex="4" GridPane.rowIndex="1" />
+                              <HBox alignment="CENTER_LEFT" prefHeight="96.0" prefWidth="156.0" spacing="15.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                 <children>
+                                    <Button fx:id="browseButton" mnemonicParsing="false" onAction="#browsetopic" text="Browse" />
+                                    <Label fx:id="fileFoundLabel" text="File Found" textFill="#009700">
+                                       <font>
+                                          <Font name="Bastion Regular" size="18.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </HBox>
                            </children>
                         </GridPane>
                      </children>
@@ -123,7 +132,7 @@
          <children>
             <Button fx:id="backButton" mnemonicParsing="false" onAction="#goBackToSearch" text="Back" />
             <ImageView fx:id="picImageView" fitHeight="350.0" fitWidth="1250.0" pickOnBounds="true" preserveRatio="true" />
-            <Button mnemonicParsing="false" text="Button" />
+            <Button mnemonicParsing="false" onAction="#goToProfile" text="Profile" />
          </children>
          <padding>
             <Insets top="25.0" />

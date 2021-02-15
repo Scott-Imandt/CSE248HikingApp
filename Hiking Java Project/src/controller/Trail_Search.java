@@ -20,6 +20,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.control.Button;
 
 public class Trail_Search extends AppDemo {
 
@@ -71,11 +72,17 @@ public class Trail_Search extends AppDemo {
 	@FXML AnchorPane ancherpane4;
 	
 	static List result;
+	@FXML Button adminButton;
 	
 	//static Label[] nameArray= {nameLabel,nameLabel1,nameLabel2,nameLabel3,nameLabel4};
 	
 		
 	@FXML public void initialize() {
+		if(user.getAuthTypeString().equals("ADMIN")) {
+			adminButton.setOpacity(1);
+			adminButton.setDisable(false);
+		}
+		
 		typeBar.getItems().add("All Types");
 		typeBar.getItems().add("Loop");
 		typeBar.getItems().add("OutAndBack");
@@ -131,12 +138,12 @@ public class Trail_Search extends AppDemo {
 		
 		if(count < total) {	
 		
-			nameLabel.setText(ts.getTrailStorage(result, 0).getTrailName());
-			headLabel.setText(ts.getTrailStorage(result, 0).getTrailHead());
-			lengthLabel.setText(ts.getTrailStorage(result, 0).getTrailLength());
-			diffLabel.setText(ts.getTrailStorage(result, 0).getTrailDifficulty());
-			elevationLabel.setText(ts.getTrailStorage(result, 0).getElevation());
-			typeLabel.setText(ts.getTrailStorage(result, 0).getTrailType());
+			nameLabel.setText("Name:  " + ts.getTrailStorage(result, 0).getTrailName());
+			headLabel.setText("Head:  " + ts.getTrailStorage(result, 0).getTrailHead());
+			lengthLabel.setText("Length:  " + ts.getTrailStorage(result, 0).getTrailLength());
+			diffLabel.setText("Difficulty:  " + ts.getTrailStorage(result, 0).getTrailDifficulty());
+			elevationLabel.setText("Elevation:  " + ts.getTrailStorage(result, 0).getElevation());
+			typeLabel.setText("Type:  " + ts.getTrailStorage(result, 0).getTrailType());
 			
 			Image imageobj = new Image(ts.getTrailStorage(result, 0).getImageLocation());
 			image.setImage(imageobj);
@@ -148,12 +155,12 @@ public class Trail_Search extends AppDemo {
 		
 		if(count < total) {		
 			
-			nameLabel1.setText(ts.getTrailStorage(result, 1).getTrailName());
-			headLabel1.setText(ts.getTrailStorage(result, 1).getTrailHead());
-			lengthLabel1.setText(ts.getTrailStorage(result, 1).getTrailLength());
-			diffLabel1.setText(ts.getTrailStorage(result, 1).getTrailDifficulty());
-			elevationLabel1.setText(ts.getTrailStorage(result, 1).getElevation());
-			typeLabel1.setText(ts.getTrailStorage(result, 1).getTrailType());
+			nameLabel1.setText("Name:  " + ts.getTrailStorage(result, 1).getTrailName());
+			headLabel1.setText("Head:  " + ts.getTrailStorage(result, 1).getTrailHead());
+			lengthLabel1.setText("Length:  " + ts.getTrailStorage(result, 1).getTrailLength());
+			diffLabel1.setText("Difficulty:  " + ts.getTrailStorage(result, 1).getTrailDifficulty());
+			elevationLabel1.setText("Elevation:  " + ts.getTrailStorage(result, 1).getElevation());
+			typeLabel1.setText("Type:  " + ts.getTrailStorage(result, 1).getTrailType());
 			
 			Image imageobj = new Image(ts.getTrailStorage(result, 1).getImageLocation());
 			image1.setImage(imageobj);
@@ -164,12 +171,12 @@ public class Trail_Search extends AppDemo {
 		}
 		if(count < total) {		
 			
-			nameLabel2.setText(ts.getTrailStorage(result, 2).getTrailName());
-			headLabel2.setText(ts.getTrailStorage(result, 2).getTrailHead());
-			lengthLabel2.setText(ts.getTrailStorage(result, 2).getTrailLength());
-			diffLabel2.setText(ts.getTrailStorage(result, 2).getTrailDifficulty());
-			elevationLabel2.setText(ts.getTrailStorage(result, 2).getElevation());
-			typeLabel2.setText(ts.getTrailStorage(result, 2).getTrailType());
+			nameLabel2.setText("Name:  " + ts.getTrailStorage(result, 2).getTrailName());
+			headLabel2.setText("Head:  " + ts.getTrailStorage(result, 2).getTrailHead());
+			lengthLabel2.setText("Length:  " + ts.getTrailStorage(result, 2).getTrailLength());
+			diffLabel2.setText("Difficulty:  " + ts.getTrailStorage(result, 2).getTrailDifficulty());
+			elevationLabel2.setText("Elevation:  " + ts.getTrailStorage(result, 2).getElevation());
+			typeLabel2.setText("Type:  " + ts.getTrailStorage(result, 2).getTrailType());
 			
 			Image imageobj = new Image(ts.getTrailStorage(result, 2).getImageLocation());
 			image2.setImage(imageobj);
@@ -181,12 +188,12 @@ public class Trail_Search extends AppDemo {
 		
 		if(count < total) {			
 			
-			nameLabel3.setText(ts.getTrailStorage(result, 3).getTrailName());
-			headLabel3.setText(ts.getTrailStorage(result, 3).getTrailHead());
-			lengthLabel3.setText(ts.getTrailStorage(result, 3).getTrailLength());
-			diffLabel3.setText(ts.getTrailStorage(result, 3).getTrailDifficulty());
-			elevationLabel3.setText(ts.getTrailStorage(result, 3).getElevation());
-			typeLabel3.setText(ts.getTrailStorage(result, 3).getTrailType());
+			nameLabel3.setText("Name:  " + ts.getTrailStorage(result, 3).getTrailName());
+			headLabel3.setText("Head:  " + ts.getTrailStorage(result, 3).getTrailHead());
+			lengthLabel3.setText("Length:  " + ts.getTrailStorage(result, 3).getTrailLength());
+			diffLabel3.setText("Difficulty:  " + ts.getTrailStorage(result, 3).getTrailDifficulty());
+			elevationLabel3.setText("Elevation:  " + ts.getTrailStorage(result, 3).getElevation());
+			typeLabel3.setText("Type:  " + ts.getTrailStorage(result, 3).getTrailType());
 			
 			Image imageobj = new Image(ts.getTrailStorage(result, 3).getImageLocation());
 			image3.setImage(imageobj);
@@ -198,12 +205,12 @@ public class Trail_Search extends AppDemo {
 
 		if(count < total) {		
 	
-			nameLabel4.setText(ts.getTrailStorage(result, 4).getTrailName());
-			headLabel4.setText(ts.getTrailStorage(result, 4).getTrailHead());
-			lengthLabel4.setText(ts.getTrailStorage(result, 4).getTrailLength());
-			diffLabel4.setText(ts.getTrailStorage(result, 4).getTrailDifficulty());
-			elevationLabel4.setText(ts.getTrailStorage(result, 4).getElevation());
-			typeLabel4.setText(ts.getTrailStorage(result, 4).getTrailType());
+			nameLabel4.setText("Name:  " + ts.getTrailStorage(result, 4).getTrailName());
+			headLabel4.setText("Head:  " + ts.getTrailStorage(result, 4).getTrailHead());
+			lengthLabel4.setText("Length:  " + ts.getTrailStorage(result, 4).getTrailLength());
+			diffLabel4.setText("Difficulty:  " + ts.getTrailStorage(result, 4).getTrailDifficulty());
+			elevationLabel4.setText("Elevation:  " + ts.getTrailStorage(result, 4).getElevation());
+			typeLabel4.setText("Type:  " + ts.getTrailStorage(result, 4).getTrailType());
 	
 			Image imageobj = new Image(ts.getTrailStorage(result, 4).getImageLocation());
 			image4.setImage(imageobj);
@@ -228,8 +235,8 @@ public class Trail_Search extends AppDemo {
 		if(ancherpane.getOpacity() == 1.0 && user.getAuthType() != user.getRoleType("GUEST")) {
 			trail = ts.getTrailStorage(result, 0);
 			
-			Parent createAccount = FXMLLoader.load(getClass().getResource("../view/Trail_View.fxml"));
-			Scene tableViewScene = new Scene(createAccount);
+			Parent trailView = FXMLLoader.load(getClass().getResource("../view/Trail_View.fxml"));
+			Scene tableViewScene = new Scene(trailView);
 			
 			Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
 			
@@ -242,8 +249,8 @@ public class Trail_Search extends AppDemo {
 	@FXML public void signOut(ActionEvent event) throws IOException {
 		user = us.signOut();
 		
-		Parent Trail_Search = FXMLLoader.load(getClass().getResource("../view/Welcome_Login.fxml"));
-		Scene tableViewScene = new Scene(Trail_Search);
+		Parent welcome = FXMLLoader.load(getClass().getResource("../view/Welcome_Login.fxml"));
+		Scene tableViewScene = new Scene(welcome);
 		
 		Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
 		
@@ -260,8 +267,8 @@ public class Trail_Search extends AppDemo {
 		if(ancherpane.getOpacity() == 1.0 && user.getAuthType() != user.getRoleType("GUEST")) {
 			trail = ts.getTrailStorage(result, 1);
 			
-			Parent createAccount = FXMLLoader.load(getClass().getResource("../view/Trail_View.fxml"));
-			Scene tableViewScene = new Scene(createAccount);
+			Parent trailView = FXMLLoader.load(getClass().getResource("../view/Trail_View.fxml"));
+			Scene tableViewScene = new Scene(trailView);
 			
 			Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
 			
@@ -278,8 +285,8 @@ public class Trail_Search extends AppDemo {
 		if(ancherpane.getOpacity() == 1.0 && user.getAuthType() != user.getRoleType("GUEST")) {
 			trail = ts.getTrailStorage(result, 2);
 			
-			Parent createAccount = FXMLLoader.load(getClass().getResource("../view/Trail_View.fxml"));
-			Scene tableViewScene = new Scene(createAccount);
+			Parent trailView = FXMLLoader.load(getClass().getResource("../view/Trail_View.fxml"));
+			Scene tableViewScene = new Scene(trailView);
 			
 			Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
 			
@@ -294,8 +301,8 @@ public class Trail_Search extends AppDemo {
 		if(ancherpane.getOpacity() == 1.0 && user.getAuthType() != user.getRoleType("GUEST")) {
 			trail = ts.getTrailStorage(result, 3);
 			
-			Parent createAccount = FXMLLoader.load(getClass().getResource("../view/Trail_View.fxml"));
-			Scene tableViewScene = new Scene(createAccount);
+			Parent trailView = FXMLLoader.load(getClass().getResource("../view/Trail_View.fxml"));
+			Scene tableViewScene = new Scene(trailView);
 			
 			Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
 			
@@ -303,15 +310,14 @@ public class Trail_Search extends AppDemo {
 			window.show();
 		}
 	}
-
 
 
 	@FXML public void goToTrailView4(MouseEvent event) throws IOException {
 		if(ancherpane.getOpacity() == 1.0 && user.getAuthType() != user.getRoleType("GUEST")) {
 			trail = ts.getTrailStorage(result, 4);
 			
-			Parent createAccount = FXMLLoader.load(getClass().getResource("../view/Trail_View.fxml"));
-			Scene tableViewScene = new Scene(createAccount);
+			Parent trailView = FXMLLoader.load(getClass().getResource("../view/Trail_View.fxml"));
+			Scene tableViewScene = new Scene(trailView);
 			
 			Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
 			
@@ -321,7 +327,32 @@ public class Trail_Search extends AppDemo {
 	}
 
 
-	
-	
+
+	@FXML public void goToProfile(ActionEvent event) throws IOException {
+		
+		if( user.getAuthType() != user.getRoleType("GUEST")) {
+						
+			Parent profile = FXMLLoader.load(getClass().getResource("../view/Profile_Info.fxml"));
+			Scene tableViewScene = new Scene(profile);
+			
+			Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
+			
+			window.setScene(tableViewScene);
+			window.show();
+		}
+		
+	}
+
+	@FXML public void goToAdmin(ActionEvent event) throws IOException {
+		
+		Parent admin = FXMLLoader.load(getClass().getResource("../view/Admin_View.fxml"));
+		Scene tableViewScene = new Scene(admin);
+		
+		Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
+		
+		window.setScene(tableViewScene);
+		window.show();
+	}
+
 
 }

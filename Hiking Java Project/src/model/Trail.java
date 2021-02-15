@@ -21,6 +21,8 @@ public class Trail implements Comparable<Trail>, Serializable{
 	private Type trailType;
 	private Difficulty trailDifficulty;
 	private String imageLocation;
+	private String trailTypeString;
+	private String trailDiffString;
 	
 	
 	public Trail(String trailName, String trailHead, int trailLength, int elevation, String trailType, String trailDifficulty, String imageLocation) {
@@ -31,15 +33,25 @@ public class Trail implements Comparable<Trail>, Serializable{
 		this.trailType = getTrailType(trailType);
 		this.trailDifficulty = getTrailDifficulty(trailDifficulty);
 		setImageLocation(imageLocation);
-		
+		this.trailTypeString = trailType.toString();
+		this.trailDiffString = trailDifficulty.toString();
+
 	}
 	
-	
-	
+		
+	public String getTrailTypeString() {
+		return trailTypeString;
+	}
+
+
+	public String getTrailDiffString() {
+		return trailDiffString;
+	}
+
+
 	public String getImageLocation() {
 		return imageLocation;
 	}
-
 
 
 	public void setImageLocation(String imageLoaction) {
