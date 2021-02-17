@@ -105,9 +105,14 @@ public class Admin_Create extends AppDemo{
 		 
 		}
 		
-		Trail temp = new Trail(name,head,length,elevation,type,diff,upLocationString);
+		Trail temp = new Trail(name,head,length,elevation,type,diff,str);
+		System.out.println(temp.toString());
 		
 		ts.putTrailStorage(temp);
+		
+		sf.setStoredData("A", us);
+		sf.setStoredData("B", ts);
+		sf.saveData(sf);
 		
 		Parent admin = FXMLLoader.load(getClass().getResource("../view/Admin_View.fxml"));
 		Scene tableViewScene = new Scene(admin);

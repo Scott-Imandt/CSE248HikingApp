@@ -33,10 +33,7 @@ public class AppDemo {
 		
 		//System.out.println(user.toString());
 		
-		//
-		
-		//user = us.createAccount("Scott", "Imandt", "Scooter", "12345", "6319236165");
-		
+				
 		//user = us.signIn("Scooter", "12345");
 		//System.out.println(user.toString());
 		
@@ -51,12 +48,12 @@ public class AppDemo {
 		
 		
 	
-		Trail t1 = new Trail("Adam","6 bs bld",3,45,"LOOP","EASY","/data/Hiking_Images/Adam.jpg");
-		Trail t2 = new Trail("Betty","5 bs bld",4,55,"OUTANDBACK","MODERATE","/data/Hiking_Images/Betty.jpg");
-		Trail t3 = new Trail("Carl","4 lane",4,65,"POINTTOPOINT","HARD",null);
-		Trail t4 = new Trail("David","3 bs bld",3,45,"LOOP","EASY",null);
-		Trail t5 = new Trail("Eurl","2 bs bld",4,55,"OUTANDBACK","MODERATE",null);
-		Trail t6 = new Trail("Frank","1 lane",4,65,"POINTTOPOINT","HARD",null);
+		Trail t1 = new Trail("Adam's Trail","2 bs blvd",3,45,"LOOP","EASY","/data/Hiking_Images/Adam.jpg");
+		Trail t2 = new Trail("Betty's Park","1 bs blvd",4,55,"OUTANDBACK","MODERATE","/data/Hiking_Images/Betty.jpg");
+		Trail t3 = new Trail("Carl's Park","5 lane",4,65,"POINTTOPOINT","HARD",null);
+		Trail t4 = new Trail("David Pond","3 bs blvd",3,45,"LOOP","EASY",null);
+		Trail t5 = new Trail("Eurl Nature Trail","4 bs blvd",4,55,"OUTANDBACK","MODERATE",null);
+		Trail t6 = new Trail("Frank Pond","4 Lane",4,65,"POINTTOPOINT","HARD","/data/Hiking_Images/Frank.jpg");
 		
 		ts.putTrailStorage(t1);
 		ts.putTrailStorage(t2);

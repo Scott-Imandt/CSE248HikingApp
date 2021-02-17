@@ -93,17 +93,17 @@
                   <Font size="24.0" />
                </font>
             </TextField>
-            <Label text="Optional Trail Image" visible="false" GridPane.rowIndex="6">
+            <ComboBox fx:id="typeComboBox" prefHeight="50.0" prefWidth="150.0" promptText="Type" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <ComboBox fx:id="diffComboBox" prefHeight="50.0" prefWidth="150.0" promptText="Difficulty" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+            <Label text="Optional Trail Image" GridPane.rowIndex="6">
                <font>
                   <Font name="Bastion Regular" size="30.0" />
                </font>
             </Label>
             <Button fx:id="createButton" defaultButton="true" mnemonicParsing="false" onAction="#createTrail" prefHeight="50.0" prefWidth="100.0" text="CREATE" GridPane.columnIndex="1" GridPane.rowIndex="7" />
-            <ComboBox fx:id="typeComboBox" prefHeight="50.0" prefWidth="150.0" promptText="Type" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-            <ComboBox fx:id="diffComboBox" prefHeight="50.0" prefWidth="150.0" promptText="Difficulty" GridPane.columnIndex="1" GridPane.rowIndex="5" />
             <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="6">
                <children>
-                  <Button fx:id="browseButton" mnemonicParsing="false" onAction="#browsetopic" prefHeight="50.0" prefWidth="150.0" text="Browse" visible="false" />
+                  <Button fx:id="browseButton" mnemonicParsing="false" onAction="#browsetopic" prefHeight="50.0" prefWidth="150.0" text="Browse" />
                   <Label fx:id="fileFoundLabel" alignment="CENTER" opacity="0.0" prefHeight="50.0" prefWidth="150.0" text="File Found" textFill="#009700">
                      <font>
                         <Font name="Bastion Regular" size="18.0" />

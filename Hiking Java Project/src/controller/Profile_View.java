@@ -57,10 +57,10 @@ public class Profile_View extends AppDemo{
 	
 	@FXML public void initialize() {
 		
-		nameLabel.setText(user.getFirstName());
-		lastLabel.setText(user.getLastName());
-		userLabel.setText(user.getUserName());
-		phoneLabel.setText(user.getPhoneNumber());
+		nameLabel.setText("First Name: " + user.getFirstName());
+		lastLabel.setText("Last Name:  " + user.getLastName());
+		userLabel.setText("User Name:  " + user.getUserName());
+		phoneLabel.setText("Phone Number:  " + user.getPhoneNumber());
 		
 		Image imageobj = new Image(user.getImage());
 		picImageView.setImage(imageobj);
@@ -89,16 +89,16 @@ public class Profile_View extends AppDemo{
 		Trail_History ts =  trailHistoryColumn.getSelectionModel().getSelectedItem();
 		System.out.println(ts);
 		
-		nameTrailLabel.setText(ts.getTrailName());
-		headLabel.setText(ts.getTrail().getTrailHead());
-		typeLabel.setText(ts.getTrail().getTrailType());
-		distanceLabel.setText(ts.getTrail().getTrailLength());
-		eleLabel.setText(ts.getTrail().getElevation());
-		diffLabel.setText(ts.getTrail().getTrailDifficulty());
-		dHikedLabel.setText(String.valueOf(ts.getDistenceHiked()));
-		avgPaceLabel.setText(String.valueOf(ts.getAveragepace()));
-		dateLabel.setText(ts.getDate());
-		durationLabel.setText(String.valueOf(ts.getDuration()));
+		nameTrailLabel.setText("Name:  " +ts.getTrailName());
+		headLabel.setText("Head:  " +ts.getTrail().getTrailHead());
+		typeLabel.setText("Type:  " +ts.getTrail().getTrailType());
+		distanceLabel.setText("Distence:  " +ts.getTrail().getTrailLength());
+		eleLabel.setText("Elevation:  " +ts.getTrail().getElevation());
+		diffLabel.setText("Difficulty:  " +ts.getTrail().getTrailDifficulty());
+		dHikedLabel.setText("Distence Hiked:  " +String.valueOf(ts.getDistenceHiked()));
+		avgPaceLabel.setText("Average Pace:  " +String.valueOf(ts.getAveragepace()));
+		dateLabel.setText("Date:  " +ts.getDate());
+		durationLabel.setText("Duration:  " +String.valueOf(ts.getDuration()));
 		
 		Image imageobj = new Image(ts.getTrail().getImageLocation());
 		trailImageView.setImage(imageobj);

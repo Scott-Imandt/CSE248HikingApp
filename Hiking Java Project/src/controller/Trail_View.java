@@ -170,7 +170,7 @@ public class Trail_View extends AppDemo{
 		user.addTrailHistory(th);
 		
 
-		Parent profile = FXMLLoader.load(getClass().getResource("../view/Profile_Info.fxml"));
+		Parent profile = FXMLLoader.load(getClass().getResource("../view/Trail_Search.fxml"));
 		Scene tableViewScene = new Scene(profile);
 		
 		Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();

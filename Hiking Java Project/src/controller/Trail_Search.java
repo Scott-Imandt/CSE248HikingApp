@@ -330,7 +330,7 @@ public class Trail_Search extends AppDemo {
 
 	@FXML public void goToProfile(ActionEvent event) throws IOException {
 		
-		if( user.getAuthType() != user.getRoleType("GUEST")) {
+		if( user.getAuthType() == user.getRoleType("USER")) {
 						
 			Parent profile = FXMLLoader.load(getClass().getResource("../view/Profile_Info.fxml"));
 			Scene tableViewScene = new Scene(profile);
